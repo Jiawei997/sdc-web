@@ -46,8 +46,8 @@ container: 'before',
 style: 'mapbox://styles/qinghong-cui/ckoeaj5v31l5m18qnn2cuj53r',
 center: [-0.1257, 51.5085],
 zoom: 9.5,
-maxZoom: 15,
-minZoom: 9.5
+// maxZoom: 15,
+// minZoom: 9.5
 });
 
 var afterMap = new mapboxgl.Map({
@@ -55,8 +55,32 @@ container: 'after',
 style: 'mapbox://styles/qinghong-cui/ckoeaos0i3rug17qnwttmo5ax',
 center: [-0.1257, 51.5085],
 zoom: 9.5,
-maxZoom: 15,
-minZoom: 9.5
+// maxZoom: 15,
+// minZoom: 9.5
+});
+
+beforeMap.scrollZoom.disable();
+beforeMap.scrollZoom.setWheelZoomRate(0.02); // Default 1/450
+
+beforeMap.on("wheel", event => {
+    if (event.originalEvent.ctrlKey) { // Check if CTRL key is pressed
+        event.originalEvent.preventDefault(); // Prevent chrome/firefox default behavior
+        if (!beforeMap.scrollZoom._enabled) beforeMap.scrollZoom.enable(); // Enable zoom only if it's disabled
+    } else {
+        if (beforeMap.scrollZoom._enabled) beforeMap.scrollZoom.disable(); // Disable zoom only if it's enabled
+    }
+});
+
+afterMap.scrollZoom.disable();
+afterMap.scrollZoom.setWheelZoomRate(0.02); // Default 1/450
+
+afterMap.on("wheel", event => {
+    if (event.originalEvent.ctrlKey) { // Check if CTRL key is pressed
+        event.originalEvent.preventDefault(); // Prevent chrome/firefox default behavior
+        if (!afterMap.scrollZoom._enabled) afterMap.scrollZoom.enable(); // Enable zoom only if it's disabled
+    } else {
+        if (afterMap.scrollZoom._enabled) afterMap.scrollZoom.disable(); // Disable zoom only if it's enabled
+    }
 });
 
 // A selector or reference to HTML element

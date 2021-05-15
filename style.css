@@ -19,26 +19,37 @@ body{
   padding-left: 20%;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h4, h5, h6{
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   font-weight: 900;
-  color: #424242;
-  background-color: rgba(255,255,255, 0.7);
+  color: #ffffff;
   text-align: center;
   margin-bottom: 35px;
 }
 h1{
-  font-size: 60px;
+  font-size: 70px;
   width: 65%;
   top:50%;
   left:50%;
 }
 h2{
   font-size: 32px;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #424242;
+  text-align: center;
+  margin-bottom: 35px;
 }
 h3{
   font-size: 21px;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #ffffff8c;
+  text-align: center;
+  margin-bottom: 35px;
 }
 
 h4{
@@ -73,13 +84,13 @@ section {
 article {
   padding: 0 1rem;
   margin: 0 auto;
-  max-width: 40rem;
+  max-width: 60rem;
 }
 article p {
   font-family: Georgia;
   font-size: 1.1rem;
   line-height: 1.8;
-  min-height: 50vh;
+  min-height: 5vh;
   margin: 0;
 }
 
@@ -99,12 +110,6 @@ figure {
   z-index: -1;
 }
 
-.footer {
-  margin-top: 5%;
-  margin-left: 5%;
-  height: 60em
-  text-align: center
-  }
 
 @media screen and (min-width: 35rem) {
   figure {
@@ -112,3 +117,64 @@ figure {
   }
 }
 
+.story-text{
+	margin:0 auto;
+	pointer-events:all;
+	max-width:90rem;
+	background-color:rgba(255, 255, 255, 0.95);
+	padding:5rem;
+	z-index:3;
+	border-top:4px solid #51c2b9;
+	border-bottom:4px solid #51c2b9;
+	font-family:'National 2 Web';
+	-webkit-box-shadow:0 3px 3px rgba(0,0,0,0.1);
+	box-shadow:0 3px 3px rgba(0,0,0,0.1);
+	width:90%
+}
+.gap {
+	margin-top:700px;
+	margin-bottom: 350px;
+}
+
+.title{
+	position: relative;
+	margin-bottom: 100px;
+}
+
+.title:after{
+	content: '';
+	height: 5px;
+	width: 40px;
+	background-color: #62aa94;
+	position: absolute;
+	top: 81px;
+	left: calc(50% - 20px);
+}
+
+.details{
+	background-color: #ffffff;
+}
+
+.details p{
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.footer{
+	background-color: #202020;
+	text-align: center;
+	padding: 60px 0;
+}
+.footer span{
+	color: #51c2b9;
+}
+.footer p{
+	font-size: 12px;
+	color: rgb(196, 196, 196，0.75);
+	margin-bottom: 0;
+	width: 100%;
+}
+.footer a{
+	color: #fff;
+}

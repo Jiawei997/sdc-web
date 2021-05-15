@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Happiness score Map of London</title>
+    <title>Green space accessibility of London</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css" rel="stylesheet" />
@@ -113,10 +113,21 @@ body { margin:0; padding:0; }
     center: [-0.029,51.492], // starting position [lng, lat]
     zoom: 9.3, // starting zoom
     pitch: 10, // tilt of the viewpoint in degrees
-    maxZoom: 15,
-    minZoom: 9
+    // maxZoom: 15,
+    // minZoom: 9
     });
 
+    map.scrollZoom.disable();
+    map.scrollZoom.setWheelZoomRate(0.02); // Default 1/450
+
+    map.on("wheel", event => {
+    if (event.originalEvent.ctrlKey) { // Check if CTRL key is pressed
+        event.originalEvent.preventDefault(); // Prevent chrome/firefox default behavior
+        if (!map.scrollZoom._enabled) map.scrollZoom.enable(); // Enable zoom only if it's disabled
+    } else {
+        if (map.scrollZoom._enabled) map.scrollZoom.disable(); // Disable zoom only if it's enabled
+    }
+    });
 
     map.on('load', function() {
       map.addControl(new mapboxgl.NavigationControl());
