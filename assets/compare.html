@@ -31,6 +31,50 @@ top: 0;
 bottom: 0;
 width: 100%;
 }
+.mapboxgl-compare:before {
+    content: 'Greenery accessibility';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-family: 'National 2 Web';
+    text-align: right;
+    font-weight: 600;
+    -webkit-transform: translate(-100%,calc(-50% - 70px));
+    -ms-transform: translate(-100%,calc(-50% - 70px));
+    transform: translate(-100%,calc(-50% - 70px));
+    background: #4c5050b0;
+    color: #fff;
+    width: 150px;
+    pointer-events: all;
+    padding: .5rem .5rem;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.mapboxgl-compare:after {
+    content: 'Self-rated health';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-family: 'National 2 Web';
+    font-weight: 600;
+    background: #f1f1f1dc;
+    color: rgba(39, 37, 37, 0.774);
+    width: 150px;
+    height: 46px;
+    pointer-events: all;
+    padding: .5rem .3rem;
+    
+    -webkit-transform: translate(4px,calc(-50% - 70px));
+    -ms-transform: translate(4px,calc(-50% - 70px));
+    transform: translate(1px,calc(-50% - 70px));
+     
+    text-align: left;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+}
+
 </style>
 
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
